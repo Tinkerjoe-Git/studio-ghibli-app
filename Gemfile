@@ -11,11 +11,15 @@ gem 'shotgun'
 gem 'pry'
 gem 'bcrypt'
 gem 'tux'
-gem 'sinatra/flash'
+gem 'sinatra-flash'
+gem 'httparty'
 
-group :development do
-  gem 'pry'
-  gem 'tux'
-  gem 'sqlite3'
-  gem 'faker'
+group :test do
+  gem 'rspec'
+  gem 'capybara'
+  gem 'rack-test'
+  gem 'database_cleaner', git: 'https://github.com/bmabey/database_cleaner.git'
 end
+
+
+
