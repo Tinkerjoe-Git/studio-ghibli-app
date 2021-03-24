@@ -1,0 +1,19 @@
+<% if @search %>
+	<h3>Showing Reviews matching '<%= @word %>':</h3>
+    <% else %>
+    <h3>Reviews Index</h3>
+    <p>Welcome, <%= @user.username %>! Here's your Reviews:<br>
+<% end %>
+<% @reviews.each do |review| %>
+<p><a href="/reviews/<%= review.id %>"><%= review.title %></a> by <em>
+<a href="/users/<%= review.user.username %>"><%= review.user.username %></a></em></p>
+<% end %><br><br>
+
+<form action='/reviews/search' method="post">
+    <p><label for="search">Search for Review:</label>
+    <input type="text" id="search" name="search">
+    <input type="submit"></p>
+</form>
+<br><br>
+<p class="center"><a href="/reviews/new">Create New Review</a></p>
+<p class="center">Go back to <a href='/'>Main Page</a></p>

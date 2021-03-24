@@ -14,7 +14,6 @@ class API
         ghibli_hash = HTTParty.get(@url)
         ghibli_array = ghibli_hash
         self.create_ghibli_objects(ghibli_array)
-        binding.pry
     end
 
     
@@ -25,5 +24,6 @@ class API
     end
 end
 
-
 API.new.get_ghibli_data
+
+

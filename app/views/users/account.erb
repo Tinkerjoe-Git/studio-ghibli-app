@@ -1,0 +1,8 @@
+<h3>Favorite Ghibli Films and Reviews for <em><%= @user.username %></em>:</h3>
+<ul>
+<% @user.userfilmreview.each do |review| %>
+  <li><p><a href="/userfilmreview/<%= userfilmreview.id %>"><%= userfilmreview.title %></a></p></li>
+<% end %>
+</ul>
+
+<p class="center"><a href="/userfilmreview">Browse All userfilmreview</a> || <a href='/'>Main Page</a></p>

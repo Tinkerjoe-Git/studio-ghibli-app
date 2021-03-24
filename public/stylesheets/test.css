@@ -1,0 +1,34 @@
+
+
+
+html {
+    box-sizing: border-box
+  }
+  *, *::before, *::after {
+    box-sizing: inherit
+  }
+
+* {
+background: rgb(12, 57, 99);
+border: .125em solid;
+margin-bottom: .5em;
+padding: .5em
+}
+
+<style>
+    .vertical-outer {
+        display: table;
+        height: 10em
+    }
+
+    .vertical-inner {
+        display: table-cell;
+        vertical-align: middle
+    }
+</style>
+
+<div class="vertical-outer">
+    <div class="vertical-inner">
+        <p>I’m so centered it’s not even funny.</p>
+    </div>
+</div>

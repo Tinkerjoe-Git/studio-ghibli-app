@@ -1,0 +1,8 @@
+<p>Edit your Review Below:</p>
+<form action="/reviews/<%=@review.id%>" method="POST">
+  <input id="hidden" type="hidden" name="_method" value="PATCH">
+    <p>Title: <input type="text" name="name" placeholder='<%=@review.title%>'></p> 
+    <p>Content: </p>
+    <textarea name="content" value='content' placeholder='<%=@review.content%>'></textarea>
+    <br>
+  <input type="submit" value="submit">
