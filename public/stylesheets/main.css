@@ -173,10 +173,11 @@
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
     box-shadow: 0 0 10px rgba(0,0,0,.3);
     margin: 10px auto;
-    max-width: 1080px;
+    max-width: 1200px;
     padding: 2.25%; /* 18px / 800px */
     width: 90%;
   }
+
 
   a {
     color: #0074d9;
@@ -294,9 +295,6 @@
     background-color: #4CAF50;
     color: white;
   }
-
-
-  
 
   .branding {
     clear: both;

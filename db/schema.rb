@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_25_063928) do
+ActiveRecord::Schema.define(version: 2021_03_25_100238) do
 
-  create_table "ghiblis", force: :cascade do |t|
+  create_table "reviews", force: :cascade do |t|
     t.string "title"
     t.string "original_title"
     t.string "description"

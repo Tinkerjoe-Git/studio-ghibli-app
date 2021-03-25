@@ -14,7 +14,7 @@ class UserController < ApplicationController
 
     post '/signup' do
         user = User.create(:username => params[:username], :password => params[:password])
-        if user.save 
+        if user.persisted?                  ##user.save 
             (session[:user_id] = user.id)
             (redirect "/account") 
         else

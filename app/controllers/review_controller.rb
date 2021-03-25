@@ -2,7 +2,7 @@ class ReviewController < ApplicationController
 
     get '/reviews' do 
         if logged_in?
-            @reviews = review.all
+            @reviews = Review.all
             erb :'/reviews/index'
         else
             redirect '/login'
@@ -22,7 +22,7 @@ class ReviewController < ApplicationController
             flash[:error] = "All fields must be filled in"
             redirect '/reviews/new'
         elsif logged_in? && !params.empty?
-            @review = current_user.reviews.create(name: params[:name], title: params[:title],  content: params[:content])
+            @review = Review.create(name: params[:name], title: params[:title],  content: params[:content], user: current_user)
             if @review.save
                 redirect "/reviews/#{@review.id}"
             else
@@ -38,7 +38,7 @@ class ReviewController < ApplicationController
 
     get '/reviews/:id' do
         if logged_in?
-            @review = review.find_by_id(params[:id])
+            @review = Review.find_by_id(params[:id])
             erb :'/reviews/show'
         else 
             flash[:error] = "You must be logged in to view reviews."
@@ -47,7 +47,7 @@ class ReviewController < ApplicationController
     end
 
     get '/reviews/:id/edit' do 
-        @review = review.find_by_id(params[:id])
+        @review = Review.find_by(id: params[:id])
         if logged_in? && current_user.reviews.include?(@review)
             erb :'/reviews/edit'
         else 
@@ -57,7 +57,7 @@ class ReviewController < ApplicationController
     end
 
     patch '/reviews/:id' do
-        @review = review.find_by_id(params[:id])
+        @review = Review.find_by(id: params[:id])
         if params.empty?
             flash[:error] = "All fields must be filled in"
             redirect "/reviews/#{@review.id}/edit"
@@ -73,7 +73,7 @@ class ReviewController < ApplicationController
 
     delete '/reviews/:id/delete' do
         if logged_in?
-            @review = review.find_by_id(params[:id])
+            @review = Review.find_by_id(params[:id])
             if @review.user == current_user then @review.delete else redirect '/login' end
         else 
             flash[:error] = "You must be logged in."

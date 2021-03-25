@@ -1,4 +1,4 @@
-class GhibliData
+class Review
     @@all =[]
   def initialize(ghibli_hash)
     ghibli_hash.each do  |key, value|

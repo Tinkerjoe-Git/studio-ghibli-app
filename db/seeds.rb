@@ -1,24 +1,28 @@
 require 'faker'
 require_relative '../lib/api.rb'
-require_relative '../lib/ghibli-data.rb'
+require_relative '../lib/review.rb'
+require 'pry'
 
 API.new.get_ghibli_data
 
 
-GhibliData.all.each do |film|
-    film1=Ghibli.create(
-        title: film.title,
-        original_title: film.original_title,
-        description: film.description,
-        director: film.director,
-        release_date: film.release_date,
-        rt_score: film.rt_score,
-        people: film.people
+Review.all.each do |review|
+    review1=Review.create(
+        title: review.title,
+        content: review.content,
+        original_title: review.original_title,
+        description: review.description,
+        director: review.director,
+        release_date: review.release_date,
+        rt_score: review.rt_score,
+        people: review.people,
+        
         
     )
 
-    film1.save
+    review1.save
 end
+binding.pry
 
 5.times do
     User.create(
@@ -28,6 +32,11 @@ end
     )
 end
 
+
+User.create(name: "Pasta Batman", username: "ghibliboyo",  password: "password")
+Review.create(title: "Graveyard of Fireflies is one of SG's most under-rated works", content: "Sample content", original_title: "Come on Fuhuwagaz", user_id: 1 )
+
+  
 
 
 
