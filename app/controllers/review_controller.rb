@@ -22,7 +22,7 @@ class ReviewController < ApplicationController
             flash[:error] = "All fields must be filled in"
             redirect '/reviews/new'
         elsif logged_in? && !params.empty?
-            @review = Review.create(name: params[:name], title: params[:title],  content: params[:content], user: current_user)
+            @review = Review.create(title: params[:title],  content: params[:content], user: current_user)
             if @review.save
                 redirect "/reviews/#{@review.id}"
             else

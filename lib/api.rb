@@ -1,5 +1,5 @@
 require 'httparty'
-require_relative 'review.rb'
+require_relative 'ghibli-data.rb'
 class API
 
 
@@ -18,7 +18,7 @@ class API
     
     def create_ghibli_objects(ghibli_array)
         ghibli_array.each do |ghibli_hash|
-            Review.new(ghibli_hash)
+            GhibliData.new(ghibli_hash)
         end
     end
 end

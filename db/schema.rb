@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_25_100238) do
+ActiveRecord::Schema.define(version: 2021_03_25_124618) do
 
-  create_table "reviews", force: :cascade do |t|
+  create_table "ghiblis", force: :cascade do |t|
     t.string "title"
     t.string "original_title"
     t.string "description"
@@ -20,7 +20,11 @@ ActiveRecord::Schema.define(version: 2021_03_25_100238) do
     t.integer "release_date"
     t.string "rt_score"
     t.string "people"
-    t.string "reviews"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "title"
+    t.string "content"
     t.integer "user_id"
   end
 
