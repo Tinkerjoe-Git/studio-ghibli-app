@@ -1,0 +1,22 @@
+<%@reviews.each do |p|%>
+
+<div class='review_card'>
+    <h4><a class='review_name' href='/reviews/<%=r.id%>'><%=r.name%></a></h4>
+    <br>
+    <br>
+    <div class='review_info'>
+    <p>Title: <%=r.title%></p>
+    <p>Content: <%=r.content%></p>
+    </div>
+    <small>Reviewed by: <%=r.user.username%></small>
+        <%if current_user.reviews.include?(r)%>
+         <form method="post" action="/reviews/<%=r.id%>/delete">
+            <input id="hidden" type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="Delete review">
+        </form>
+        <form method="get" action="/reviews/<%=r.id%>/edit">
+            <input type="submit" value="Edit review">
+        </form>
+        <%end%>
+    </div>
+<%end%>
