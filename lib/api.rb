@@ -1,4 +1,3 @@
-require 'pry'
 require 'httparty'
 require_relative 'ghibli-data.rb'
 class API
@@ -24,6 +23,6 @@ class API
     end
 end
 
-API.new.get_ghibli_data
+
 
 

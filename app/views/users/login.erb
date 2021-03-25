@@ -1,7 +1,4 @@
   
-<h3>Login to Ghibli Fans</h3>
-
-<p>Please enter your username and password.</p>
 
 <% if @failed %>
 	<div id="error">
@@ -10,13 +7,13 @@
 <% end %>
 
 <form action="/login" method="POST">
+	<div class="separator"></div>
 	<p><label for="username">Username:</label><br>
 	<input type="text" id="username" name="username"><br><br>
 	
 	<p><label for="password">Password:</label><br>
-	<input type="password" it="password" name="password"><br><br>
+	<input type="text" id="password" value="secret" name="password"><br><br>
 
-	<button type="submit" alt="Sign In"><img src="/photos/signin.png" width=55></button></>
+	<button type="submit" name ="Submit" value="Submit" alt="Sign In"><img src="/images/ghiblisubmitbutton.png" width=55></button></>
 </form>
 <br>
-<p class="center">Go back to <a href='/'>Main Page</a></p>

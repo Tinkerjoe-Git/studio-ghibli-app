@@ -30,28 +30,37 @@
           </div>
           <% else %>
           <h1> Ghibli Fan Reviews</h1>
-          <ul>
-            <li><a href="/signup">Sign Up</a></li>
-            <li><a href="/login"> Log In </a></li>
-          </ul>
+          <nav class="navbar navbar-expand-lg navbar-dark bg-inherit">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="/signup">Sign Up</a>
+                <a class="nav-item nav-link" href="/login"> Log In </a>
+              </div>
+            </div>
+          </nav>
           <%end %>
-    </div>
-      <br>
+          </div>
+            <br>
 
 
-      <%= yield %>
+            <%= yield %>
 
-        <div class='error_message'>
-          <% if !!flash[:error] %>
-            <%= flash[:error] %>
-          <% end %>
-        
+              <div class='error_message'>
+                <% if !!flash[:error] %>
+                  <%= flash[:error] %>
+                <% end %>
+              
+              </div>
+
+            <footer class="branding">
+              <small>&copy; 2021 <strong>Ghibli Fan Reviews</strong></small>
+            </footer>
         </div>
-
-      <footer class="branding">
-        <small>&copy; 2021 <strong>Ghibli Fan Reviews</strong></small>
-      </footer>
-  </div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <!--[if lt IE 7]>

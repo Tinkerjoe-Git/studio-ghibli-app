@@ -1,6 +1,9 @@
 <p>Add your new Review of a Studio Ghibli Film:</p>
-<form action="/projects" method="POST">
-  <p>Title: <input type="text" name="title"></p>  
-  <p>Content: <input type="text" name="content"></p>
-  <input type="submit" value="submit">
+<form action="/reviews" method="POST">
+  <p>Title: <input type="text" name="title"></p><br><br>
+  <p>Review:</p>
+    <textarea name="message" placeholder="Write your review here..." rows="7" id="msg"></textarea><br><br>
+  <button type="submit" name ="Submit" value="Submit" alt="Sign In"><img src="/images/ghiblisubmitbutton.png" width=55></button></div>
 </form>
+
+

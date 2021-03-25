@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_22_190219) do
+ActiveRecord::Schema.define(version: 2021_03_25_063928) do
 
   create_table "ghiblis", force: :cascade do |t|
     t.string "title"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2021_03_22_190219) do
     t.integer "release_date"
     t.string "rt_score"
     t.string "people"
-    t.string "user_film_reviews"
+    t.string "reviews"
     t.integer "user_id"
   end
 
