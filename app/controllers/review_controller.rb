@@ -2,7 +2,7 @@ class ReviewController < ApplicationController
 
     get '/reviews' do 
         if logged_in?
-            @reviews = Review.all
+            @reviews = current_user.reviews
             erb :'/reviews/index'
         else
             redirect '/login'
@@ -11,7 +11,7 @@ class ReviewController < ApplicationController
 
     get '/reviews/new' do
         if logged_in?
-            @review = Review.new
+            #@review = Review.new
             erb :'/reviews/create'
         else 
             redirect '/login'
@@ -20,21 +20,20 @@ class ReviewController < ApplicationController
 
     post '/reviews' do
         @user = User.find(session[:user_id])
-        # @review = @user.reviews.build(params[:review])
+        current_user = @user
         if params[:review] == nil
             flash[:error] = "Your review could not be saved. Try again!"
             redirect '/reviews/new'
         elsif !params.empty?
-            @review = Review.create(title: params[:title],  content: params[:content], user: current_user)
-            @review.user_id = current_user.id
+            review = current_user.reviews.build(params[:review])
         end
-        if @review.valid?
-          @review.save
-          flash[:message] = "Successfully posted review."
-          redirect "/users/#{@user.slug}"
+        if review.valid?
+            review.save
+            flash[:message] = "Successfully posted review."
+            redirect "/users/#{@user.slug}"
         else
-          flash[:message] = "review was invalid. Please try again."
-          redirect '/reviews/new'
+            flash[:message] = "review was invalid. Please try again."
+            redirect '/reviews/new'
         end
     end
 

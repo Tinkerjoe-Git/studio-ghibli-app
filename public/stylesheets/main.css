@@ -137,7 +137,7 @@
     background-color: #9d223c;
     font-family: inherit;
     color: #fff;
-    padding: 1em 0;
+    padding: .6em 0;
     font-weight: 100;
     font-size: 1.2em;
     text-transform: inherit, uppercase;
@@ -164,9 +164,9 @@
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
     box-shadow: 0 0 10px rgba(0,0,0,.3);
-    margin: 7px auto;
+    margin: 10px auto;
     max-width: 1480px;
-    padding: 2.0%; /* 18px / 800px */
+    padding: 2.50%; /* 18px / 800px */
     width: 90%;
   }
 
@@ -195,7 +195,7 @@
     border: .5em solid;
     font-family: inherit;
     font-size: 1.4em;
-    padding: .08em 0;
+    padding: .6em 0;
     text-align: center;
     font-weight: 500;
     text-transform: uppercase;
@@ -272,7 +272,7 @@
     float: left;
     color: #f2f2f2;
     text-align: center;
-    padding: 14px 16px;
+    padding: .07em 0;
     text-decoration: none;
     font-size: 17px;
   }
