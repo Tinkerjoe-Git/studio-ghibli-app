@@ -23,10 +23,6 @@ class UserController < ApplicationController
         end
     end
 
-    # get '/login' do
-    #     @user = User.find_by(:username => params[:username])
-    #     !logged_in? ? (erb :'/users/login') : (redirect "/users/#{@user.slug}")
-    # end
 
     post "/login" do
         user = User.find_by(:username => params[:username])
@@ -38,15 +34,4 @@ class UserController < ApplicationController
             redirect "/login"
         end
     end
-
-    get "/logout" do
-        if logged_in? 
-            session.destroy
-            redirect '/login' 
-        else
-            flash[:error] = "Something went wrong. Please try again!"
-            redirect "/"
-        end
-    end
-
 end
