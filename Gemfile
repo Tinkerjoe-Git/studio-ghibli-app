@@ -14,6 +14,7 @@ gem 'tux'
 gem 'sinatra-flash'
 gem 'httparty'
 gem 'faker'
+gem 'bootstrap', '~> 4.3.1'
 
 group :test do
   gem 'rspec'

@@ -18,6 +18,7 @@ class ReviewController < ApplicationController
         end
     end
 
+
     post '/reviews' do
         @user = User.find(session[:user_id])
         current_user = @user
@@ -40,7 +41,8 @@ class ReviewController < ApplicationController
     get '/reviews/:id' do
         if logged_in?
             @review = Review.find_by_id(params[:id])
-            erb :'/reviews/show'
+            flash[:message] = "Success, here it is"
+            erb :"/reviews/show"
         else 
             flash[:error] = "You must be logged in to view reviews."
             redirect '/login'
@@ -64,15 +66,17 @@ class ReviewController < ApplicationController
             redirect "/reviews/#{@review.id}/edit"
         elsif logged_in? && !params.empty? && current_user.reviews.include?(@review)
             @review.update(title: params[:title],  content: params[:content])
-            redirect "/reviews/#{@review.id}"
-        else 
+            redirect "/reviews/#{@review.id}" 
+        elsif !logged_in?
             flash[:error] = "You must be logged in."
             redirect '/login'
+        else
+            redirect "/reviews/#{@review.id}/edit"
         end
         
     end
 
-    delete '/reviews/:id/delete' do
+    delete '/reviews/:id' do
         if logged_in?
             @review = Review.find_by_id(params[:id])
             if @review.user == current_user then @review.delete else redirect '/login' end

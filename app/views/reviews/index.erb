@@ -2,8 +2,9 @@
 
   <ul>
   <% @reviews.each do |review| %>
-    <li><%= review.title %></li><br>
-    <% end %>
+    <li><a href="/reviews/<%= review.id %>"><%= review.title %></a></li>
+    <br>
+  <% end %>
   </ul>
 
 

@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
     register Sinatra::Flash
-    require 'sinatra/flash'
-    enable :sessions
+    
 
     get '/login' do
         @user = User.find_by(:username => params[:username])

@@ -1,7 +1,6 @@
 class UserController < ApplicationController
     register Sinatra::Flash
-    require 'sinatra/flash'
-    enable :sessions
+    
 
     get '/signup' do 
         !logged_in? ? (erb :'/users/signup') : (redirect "/")

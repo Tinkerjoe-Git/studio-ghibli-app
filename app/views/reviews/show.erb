@@ -1,19 +1,24 @@
-<% if @search %>
-	<h3>Showing Reviews matching '<%= @word %>':</h3>
-    <% else %>
-    <h3>Reviews Index</h3>
-    <p>Welcome, <%= @user.username %>! Here's your Reviews:<br>
-<% end %>
-<% @reviews.each do |review| %>
-<p><a href="/reviews/<%= review.id %>"><%= review.title %></a> by <em>
-<a href="/users/<%= review.user.username %>"><%= review.user.username %></a></em></p>
-<% end %><br><br>
+<h1>Title:<%=  @review.title%></h1>
+<h1>Content:<%= @review.content %></h1>
 
-<form action='/reviews/search' method="post">
-    <p><label for="search">Search for Review:</label>
-    <input type="text" id="search" name="search">
-    <input type="submit"></p>
+<div>
+<form action="/reviews/<%= @review.id %>" method="post">
+    <input type="hidden" name="_method" value="delete"> 
+    <button type="submit" name ="Delete" value="delete" alt="Delete"><img src="/images/ghiblisubmitbutton.png" width=55></button></div>
 </form>
-<br><br>
-<p class="center"><a href="/reviews/new">Create New Review</a></p>
-<p class="center">Go back to <a href='/'>Main Page</a></p>
+
+
+<form method="get" action="/reviews/<%=@review.id%>/edit">
+  <input type="submit" value="Edit review">
+  <button type="submit" name ="Edit" value="edit" alt="Edit"><img src="/images/ghiblisubmitbutton.png" width=55></button></div>
+</form>
+</div>
+
+
+
+
+
+<% if logged_in? && current_user.id==@review.user_id %>
+    <%= flash[:notice] = "Review user relationship verified"%>
+<% end %>
+
