@@ -1,8 +1,10 @@
 <h1>Reviews</h1>
 
-  <ul><% @reviews.each do |review| %>
-    <li>"<%= review.title %>" -<a href="/users/<%= review.user.slug %>"><%= review.user.username %></a><br>
-    <% end %></ul>
+  <ul>
+  <% @reviews.each do |review| %>
+    <li><%= review.title %></li><br>
+    <% end %>
+  </ul>
 
 
 
