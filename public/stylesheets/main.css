@@ -95,8 +95,7 @@
     @media (min-width: 72rem) {
       html {
         font-size: 20px; } }
-  
-  
+      
   input[type="submit"] {
     -webkit-transition: opacity 0.2s ease, background 0.2s ease;
     transition: opacity 0.2s ease, background 0.2s ease;
@@ -114,9 +113,6 @@
   input[type="submit"]:active {
     background: #999;
   }
-  
-  
-  
   
   ::selection {
     text-shadow: none;
@@ -146,8 +142,8 @@
     font-family: inherit;
     color: #fff;
     padding: 1em 0;
-    font-weight: 300;
-    font-size: 1.4em;
+    font-weight: 100;
+    font-size: 1.2em;
     text-transform: inherit, uppercase;
     text-align: center;
     letter-spacing: .4em;
@@ -172,9 +168,9 @@
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
     box-shadow: 0 0 10px rgba(0,0,0,.3);
-    margin: 10px auto;
-    max-width: 1200px;
-    padding: 2.25%; /* 18px / 800px */
+    margin: 7px auto;
+    max-width: 1480px;
+    padding: 2.0%; /* 18px / 800px */
     width: 90%;
   }
 
@@ -185,14 +181,14 @@
     background-image: linear-gradient(135deg, #723362, #9d223c);
     background-color: #9d223c;
     font-family: inherit;
-    padding: 1em 0;
+    padding: .07em 0;
     font-weight: 100;
     font-size: 1.em;
     text-transform: inherit, uppercase;
     text-align: center;
     letter-spacing: .4em;
     padding-left: .4em;
-    margin: .1em 26px;
+    margin: .1em 22px;
    }
     a:visited {
       color: #b10dc9; }
@@ -202,10 +198,10 @@
     color: #000;
     border: .5em solid;
     font-family: inherit;
-    font-size: 1.5em;
-    padding: 1em 0;
+    font-size: 1.4em;
+    padding: .08em 0;
     text-align: center;
-    font-weight: 700;
+    font-weight: 500;
     text-transform: uppercase;
     letter-spacing: .4em;
     padding-left: .4em
