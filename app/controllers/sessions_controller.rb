@@ -23,6 +23,7 @@ class SessionsController < ApplicationController
             redirect "/reviews"
         # if user not valid, send back to /login
         else
+            flash[:error] = "Incorrect username or password. Please try again!"
             redirect "/login"
         end
     end

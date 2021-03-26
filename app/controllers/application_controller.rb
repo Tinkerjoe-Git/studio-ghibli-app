@@ -15,6 +15,12 @@ class ApplicationController < Sinatra::Base
       #flash[:notice] = "Hooray, Flash is working!"
       erb :index
     end  
+
+    
+    get '/search' do
+      @ghibli = Ghibli.find_by(title: params["title"])
+      erb :results
+    end
     
     def current_user
       @current_user ||= User.find_by_id(session["user_id"])

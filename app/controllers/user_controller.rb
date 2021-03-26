@@ -23,10 +23,10 @@ class UserController < ApplicationController
         end
     end
 
-    get '/login' do
-        @user = User.find_by(:username => params[:username])
-        !logged_in? ? (erb :'/users/login') : (redirect "/users/#{@user.slug}")
-    end
+    # get '/login' do
+    #     @user = User.find_by(:username => params[:username])
+    #     !logged_in? ? (erb :'/users/login') : (redirect "/users/#{@user.slug}")
+    # end
 
     post "/login" do
         user = User.find_by(:username => params[:username])
