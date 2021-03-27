@@ -18,10 +18,10 @@ class SessionsController < ApplicationController
         end
     end
 
-    delete "/logout" do
+    get "/logout" do
         if logged_in? 
             session.delete("user_id")
-            redirect '/login' 
+            redirect "/"
         else
             flash[:error] = "Something went wrong. Please try again!"
             redirect "/"
