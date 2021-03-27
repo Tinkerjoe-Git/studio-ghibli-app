@@ -1,77 +1,239 @@
-
-
-
 html {
     box-sizing: border-box
-  }
-  *, *::before, *::after {
-    box-sizing: inherit
-  }
-
-* {
-background: rgb(12, 57, 99);
-border: .125em solid;
-margin-bottom: .5em;
-padding: .5em
 }
 
-<style>
-    .vertical-outer {
-        display: table;
-        height: 10em
+*, *::before, *::after {
+    box-sizing: inherit
+}
+
+input[type="text"] {
+    /* Flexibility */
+    box-sizing: border-box;
+    width: 45%;
+    /* Styling */
+    padding: .4em .55em;
+    font-size: inherit;
+    font-family: inherit;
+    color: #666;
+    border: 0;
+    border-radius: .25em;
+    outline: none
+}
+
+textarea {
+    /* Flexibility */
+    box-sizing: border-box;
+    width: 45%;
+    /* Styling */
+    padding: .4em .55em;
+    font-size: inherit;
+    font-family: inherit;
+    color: #666;
+    border: 0;
+    border-radius: .25em;
+    outline: none
+}
+
+*, *::after, *::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff;
+    color: #333332;
+    font-family: Avenir, "Helvetica Neue", sans-serif;
+    font-size: inherit, 18px;
+    margin: 0;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    text-align: inherit, center;
+}
+
+input[type="submit"]:hover {
+    background: #EEE;
+}
+
+input[type="submit"]:active {
+    background: #999;
+}
+
+::selection {
+    text-shadow: none;
+    background: #b4d5fe;
+}
+
+::-moz-selection {
+    text-shadow: none;
+    background: #b4d5fe;
+}
+
+.error_message {
+    background: red;
+    text-align: center;
+    margin: 4px;
+}
+
+.notice_message {
+    background: rgb(50, 126, 212);
+    text-align: center;
+    margin: 4px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    float: left;
+    background-image: linear-gradient(135deg, #723362, #9d223c);
+    background-color: #9d223c;
+    font-family: inherit;
+    color: #fff;
+    padding: .6em 0;
+    font-weight: 100;
+    font-size: 1.2em;
+    text-transform: inherit, uppercase;
+    text-align: center;
+    letter-spacing: .4em;
+    padding-left: .4em;
+    margin: .1em 75px;
+}
+
+.separator {
+    height: 2.5em;
+}
+
+@media (min-width: 44rem) {
+    .separator {
+        height: 10em;
     }
+}
 
-    .vertical-inner {
-        display: table-cell;
-        vertical-align: middle
+.header {
+    height: 100px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 15px;
+}
+
+.wrapper {
+    background: rgb(138, 118, 160);
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    margin: 10px auto;
+    max-width: 960px;
+    padding: 2.50%;
+    /* 18px / 800px */
+    width: 90%;
+}
+
+a {
+    color: #0074d9;
+    float: left;
+    background-image: linear-gradient(135deg, #723362, #9d223c);
+    background-color: #9d223c;
+    font-family: inherit;
+    padding: .07em 0;
+    font-weight: 100;
+    font-size: 1.em;
+    text-transform: inherit, uppercase;
+    text-align: center;
+    letter-spacing: .4em;
+    padding-left: .4em;
+    margin: .1em 22px;
+}
+
+a:visited {
+    color: #b10dc9;
+}
+
+h1 {
+    background: #fff;
+    color: #000;
+    border: .5em solid;
+    font-family: inherit;
+    font-size: 1.4em;
+    padding: .6em 0;
+    text-align: center;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .4em;
+    padding-left: .4em
+}
+
+h2 {
+    background: #fff;
+    color: #000;
+    border: .5em solid;
+    font-family: inherit;
+    font-size: 1.5em;
+    padding: 1em 0;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .4em;
+    padding-left: .4em
+}
+
+h3 {
+    font-size: 18px;
+    line-height: 36px;
+}
+
+p {
+    margin-bottom: 18px;
+}
+
+.main {
+    overflow: hidden;
+}
+
+/* Add a color to the active/current link */
+
+.branding {
+    clear: both;
+}
+
+footer.branding {
+    border-top: 2px solid #ccc;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    * {
+        background: rgb(4, 34, 88);
+        border: .125em solid;
+        margin-bottom: .5em;
+        padding: .5em
     }
-</style>
-
-<div class="vertical-outer">
-    <div class="vertical-inner">
-        <p>I’m so centered it’s not even funny.</p>
-    </div>
-</div>
-
-
-<div class="example-wrapper">
-      <style>
-          .example-flexible-input .example-content {
-              background: #eee
-          }
-
-          .example-flexible-input .box {
-              background: #ccc;
-              width: 75%;
-              padding: 1em
-          }
-
-          .example-flexible-input .box-inner {
-              overflow: hidden
-          }
-
-          .example-flexible-input .box-inner p:first-child {
-              margin-top: 0
-          }
-
-          .example-flexible-input input[type="text"] {
-              box-sizing: border-box;
-              width: 100%;
-              padding: .4em .55em;
-              font-size: inherit;
-              font-family: inherit;
-              color: inherit;
-              border: 0;
-              border-radius: .25em;
-              outline: none
-          }
-      </style>
-      <div class="example example-flexible-input">
-        <div class="example-content">
-          <div class="box">
-              <div class="box-inner">
-                  <p>Your Review</p>
-                  <input type="text" placeholder="Text input">
-              </div>
-          </div>
-      </div>
+    .wrapper {
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        width: auto;
+    }
+    .content, .sidebar {
+        float: none;
+        width: 100%;
+    }
+    .sidebar {
+        background: transparent;
+        border: none;
+        border-top: 2px solid #ccc;
+        padding: 0;
+    }
+    h1 {
+        font-size: 24px;
+        line-height: 36px;
+    }
+    h2 {
+        font-size: 18px;
+        line-height: 24px;
+    }
+}
