@@ -1,5 +1,11 @@
 <ul>
 <% @ghiblis.each do |g| %>
     <li><%= g.title %></li>
+    <li><%= g.original_title %></li>
+    <li><%= g.description %></li>
+    <li><%= g.director %></li>
+    <li><%= g.release_date %></li>
+    <li><%= g.rt_score %></li>
+    <li><%= g.people %></li>
 <% end %>
 </ul>
