@@ -60,41 +60,43 @@ class ReviewController < ApplicationController
     end
 
     patch '/reviews/:id' do
-        @review = Review.find_by(id: params[:id])
-        if params.empty?
-            flash[:error] = "All fields must be filled in"
-            redirect "/reviews/#{@review.id}/edit"
-        elsif logged_in? && !params.empty? && current_user.reviews.include?(@review)
-            @review.update(title: params[:title],  content: params[:content])
+        redirect_if_not_logged_in
+        redict_if_not_authorized
+        if @review.update(params[:review])
             redirect "/reviews/#{@review.id}" 
-        elsif !logged_in?
-            flash[:error] = "You must be logged in."
-            redirect '/login'
         else
             redirect "/reviews/#{@review.id}/edit"
         end
-        
     end
 
     delete '/reviews/:id' do
-        if logged_in?
-            @review = Review.find_by_id(params[:id])
-            if @review.user == current_user then @review.delete else redirect '/login' end
-        else 
-            flash[:error] = "You must be logged in."
-            redirect '/login'
-        end
-        redirect '/reviews'
-    end
-end
 
-#     post '/reviews/search' do
-#         @user = current_user
-#         @word = params[:search]
-#         @reviews = review.where("title LIKE ?", "%#{params[:search]}%")
-#         @search = true
-#         erb :'reviews/index'
-#     end
-    
-# end
+        redirect_if_not_logged_in
+
+        redirect_if_not_authorized
+
+        @movie.destroy
+
+        redirect "/movies"
+    end
+
+    private
+
+    def redirect_if_not_authorized
+        @review = Review.find_by_id(params[:id])
+        if @review.user_id != current_user.id
+            redirect "/reviews"
+        end
+    end
+   
+
+    post '/reviews/search' do
+        @user = current_user
+        @word = params[:search]
+        @reviews = Review.where("title LIKE ?", "%#{params[:search]}%")
+        @search = true
+        erb :'reviews/index'
+    end
+        
+end
 

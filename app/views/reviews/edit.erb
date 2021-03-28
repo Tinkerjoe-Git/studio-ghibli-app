@@ -1,19 +1,9 @@
-<p>Edit your Review Below:</p>
+<p>Edit your Review:</p>
 <form action="/reviews/<%=@review.id%>" method="POST">
   <input id="hidden" type="hidden" name="_method" value="PATCH">
-    <p>Title: <input type="text" name="name" placeholder='<%=@review.title%>'></p> 
-    <p>Content: 
-    <textarea type="text" name="content" value='content' placeholder='<%=@review.content%>'></textarea>
-    <br>
-  <input type="submit" value="Update Review">
-
-
-
-<form action = "/cgi-bin/hello_get.cgi" method = "get">
-   What improvements you want in College?
-   <br>
-   <textarea rows = "5" cols = "60" name = "description">
-      Enter details here...
-   </textarea><br>
-   <input type = "submit" value = "submit" />
+  <p>Title: <input type="text" name="review[:title]" value="<%= @review.title %>"></p><br>
+  <p>Content: </p>
+  <textarea name="review[:content]" rows = "10" cols = "50" value="<%= @review.content %>"></textarea><br>
+  <input type="submit" value="Update Review" />
 </form>
+
