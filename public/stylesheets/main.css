@@ -14,6 +14,18 @@ body {
   text-align: inherit, center;
 }
 
+div.form {
+  display: block;
+  text-align: center;
+}
+
+form {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
 *, *::after, *::before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -139,7 +151,6 @@ input[type="text"] {
 }
 
 li {
-  
   background-image: linear-gradient(135deg, #723362, #9d223c);
   background-color: #9d223c;
   font-family: inherit;

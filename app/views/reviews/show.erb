@@ -1,18 +1,22 @@
-<h1>Title:<%=  @review.title%></h1>
-<h1>Content:<%= @review.content %></h1>
-
-<div>
-<form action="/reviews/<%= @review.id %>" method="post">
-    <input type="hidden" name="_method" value="delete"> 
-    <button type="submit" name ="Delete" value="delete" alt="Delete"><img src="/images/ghiblisubmitbutton.png" width=55></button></div>
-</form>
-
-
-<form method="get" action="/reviews/<%=@review.id%>/edit">
-  <input type="submit" value="Edit review">
-  <button type="submit" name ="Edit" value="edit" alt="Edit"><img src="/images/ghiblisubmitbutton.png" width=55></button></div>
-</form>
+<div class="separator">
+<center><p>Title: <%=@review.title%><p></center>
 </div>
+<div class="separator">
+<center><p>Content: <%=@review.content %></p></center>
+</div>
+
+
+  <form action="/reviews/<%= @review.id %>" method="post"> 
+      <input type="hidden" name="_method" value="delete">
+      <input class="btn btn-primary bg-red" type="submit" value="Delete">
+  </form>
+
+
+
+  <form method="get" action="/reviews/<%=@review.id%>/edit">
+    <input type="submit" name="_method" value="Edit review">
+    <input class="btn btn-primary bg-blue" type="submit" value="Update">
+  </form>
 
 
 

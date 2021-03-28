@@ -1,9 +1,12 @@
 <p>Edit your Review:</p>
+<br></br>
+
 <form action="/reviews/<%=@review.id%>" method="POST">
-  <input id="hidden" type="hidden" name="_method" value="PATCH">
-  <p>Title: <input type="text" name="review[:title]" value="<%= @review.title %>"></p><br>
-  <p>Content: </p>
-  <textarea name="review[:content]" rows = "10" cols = "50" value="<%= @review.content %>"></textarea><br>
-  <input type="submit" value="Update Review" />
+  <input type="hidden" name="_method" value="patch">
+  <label>Title:</label>
+  <input type="text" name="review[title]" value="<%= @review.title %>"><br>
+  <label>Content:</label>
+  <input type="text" class="textbox" name="review[content]" value="<%= @review.content %>"><br>
+  <input class="btn btn-primary-success" type="submit" value="Update">
 </form>
 

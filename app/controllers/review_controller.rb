@@ -61,7 +61,7 @@ class ReviewController < ApplicationController
 
     patch '/reviews/:id' do
         redirect_if_not_logged_in
-        redict_if_not_authorized
+        redirect_if_not_authorized
         if @review.update(params[:review])
             redirect "/reviews/#{@review.id}" 
         else
@@ -75,9 +75,9 @@ class ReviewController < ApplicationController
 
         redirect_if_not_authorized
 
-        @movie.destroy
+        @review.destroy
 
-        redirect "/movies"
+        redirect "/reviews"
     end
 
     private
