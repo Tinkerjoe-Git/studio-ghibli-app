@@ -10,7 +10,15 @@ class GhibliController < ApplicationController
     ##Then the user clicks the href and it takes them to the films details
 
     get '/ghiblis/deets'do
-        @ghibli = Ghibli.find_by(:title => params[:title])
+        @ghibli = Ghibli.find_by(:title => params[:params])
         erb :'ghiblis/deets'
+    end
+
+    post '/ghiblis/search' do
+        @user = current_user
+        @word = params[:search]
+        @ghibli = Ghibli.where("title LIKE ?", "%#{params[:search]}%")
+        @search = true
+        erb :'ghiblis/search'
     end
 end

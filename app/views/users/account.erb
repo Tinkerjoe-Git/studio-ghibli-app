@@ -1,17 +1,10 @@
-<h3>Favorite Ghibli Films and reviews for <em><%= @user.username %></em>:</h3>
-
+<h1>Reviews for <em><%= @user.username %></em>:</h1>
 <ul>
-  <% @user.reviews.each do |review| %>
-    <li>
-      <p>
-        <a href="/reviews/<%= review.id %>">
-          <%= review.title, review.content %>
-        </a>
-      </p>
-    </li>
-  <% end %>
+<% @user.reviews.each do |review| %>
+  <li><p><a href="/reviews/<%= review.id %>"><%= review.title %></a></p></li>
+<% end %>
 </ul>
 
-<p class="center">
-  <a href="/reviews">Browse All reviews</a> || <a href='/'>Main Page</a>
-</p>
+<p class="center"><a href="/ghiblis">Studio Ghibli Archive</a> || <a href='/'>Main Page</a></p>
+
+

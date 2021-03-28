@@ -1,0 +1,20 @@
+  
+<% if @search %>
+    <h1>Showing Films matching '<%= @word %>':</h1>
+    <% else %>
+    <h3>ghiblis Index</h3>
+    <p>Welcome, <%= @user.username %>! Here are films to get you started:<br>
+<% end %>
+<% @ghiblis.each do |g| %>
+<p><a href="/ghiblis/<%= ghibli.id %>"><%= ghibli.title %></a> by <em>
+<a href="/ghiblis/index"></a></em></p>
+<% end %><br>
+<div class="seperator">
+
+<form action='/ghiblis/search' method="post">
+    <p><label for="search">Look for a Studio Ghibli film:</label>
+    <input type="text" id="search" name="search">
+    <button type="submit" name ="Search" value="Submit" alt="Search"><img src="/images/ghiblisubmitbutton.png" width=55></button></>
+</form>
+<br><br>
+<p class="center">Go back to <a href='/'>Main Page</a></p>
