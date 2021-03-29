@@ -3,19 +3,6 @@
 A Film review site with full Studio Ghibli Database
 
 
-## Summary
-
-  - [Getting Started](#getting-started)
-  - [Runing the tests](#running-the-tests)
-  - [Deployment](#deployment)
-  - [Built With](#built-with)
-  - [Contributing](#contributing)
-  - [Versioning](#versioning)
-  - [Authors](#authors)
-  - [License](#license)
-  - [Acknowledgments](#acknowledgments)
-
-
 ### Prerequisites
 
 An IDE:
