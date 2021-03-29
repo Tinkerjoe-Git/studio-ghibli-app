@@ -3,10 +3,10 @@
 
 <form action="/reviews/<%=@review.id%>" method="POST">
   <input type="hidden" name="_method" value="patch">
-  <label>Title:</label>
-  <input type="text" name="review[title]" value="<%= @review.title %>"><br>
-  <label>Content:</label>
-  <input type="text" class="textbox" style="width:800px; height:500px;" name="review[content]" value="<%= @review.content %>"><br>
+  <label><br>Title:</br></label>
+  <input type="text" name="review[title]" value="<%= @review.title %>"></><br>
+  <label><br>Content:</br></label>
+  <input type="text" name="review[content]"class="textbox" style="width:800px; height:400px;" name="review[content]" value="<%= @review.content %>"></><br>
   <input class="btn btn-primary bg-blue" type="submit" value="Update">
 </form>
 
