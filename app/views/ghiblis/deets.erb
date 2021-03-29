@@ -1,11 +1,9 @@
+
 <ul>
-<% @ghiblis.each do |g| %>
-  <li><%= g.title <a href="/#{@g.title}"></a> %></li>
+<% @ghiblis.each do |ghibli| %>
+  <li><a href="/ghiblis/<%= ghibli.id %>"><%= ghibli.title %></a></li>
+  <br>
 <% end %>
 </ul>
 
 
-<ul>
-   <li><a href="<%= g.params[:params] %>" target="_blank"><p class="h4"><%= luckyvideo.title %></p></a></li>
-</ul>
-<% end %>

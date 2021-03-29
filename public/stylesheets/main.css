@@ -82,33 +82,7 @@ input[type="submit"]:active {
   background: #999;
 }
 
-textarea {
-  /* Flexibility */
-  box-sizing: border-box;
-  width: 45%;
-  /* Styling */
-  padding: .4em .55em;
-  font-size: inherit;
-  font-family: inherit;
-  color: #fff;
-  border: 0;
-  border-radius: .25em;
-  outline: none
-}
 
-input[type="text"] {
-  /* Flexibility */
-  box-sizing: border-box;
-  width: 45%;
-  /* Styling */
-  padding: .4em .55em;
-  font-size: inherit;
-  font-family: inherit;
-  color: #666;
-  border: 0;
-  border-radius: .25em;
-  outline: none
-}
 
 .search {
   width: 100%;
